@@ -8,6 +8,6 @@ An DoS Script For Termux By NullDevzHax
 `git clone
 https://github.com/NullDevzHax/sXHax.git`
 `apt install python`
-`pip install asyncio`
+`pip install aiohttp`
 `cd sXHax`
 `python sXHax.py`
