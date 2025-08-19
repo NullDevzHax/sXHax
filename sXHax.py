@@ -11,7 +11,7 @@ CYAN = '\033[96m'
 
 os.system('clear')
 
-print(f"{CYAN}SCRIPT MADE BY NULLDEVZ THIS IS AN DoS SCRIPT V1,GET IN GITHUB: https://github.com/NullDevzHax/sXHax{RESET}")
+print(f"{CYAN}SCRIPT MADE BY NULLDEVZ THIS IS AN DoS SCRIPT V1,GET IN GITHUB: https://github.com/NullDevzHax/sXHax")
 
 async def send_request(session, url, port):
     try:
