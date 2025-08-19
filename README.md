@@ -1,0 +1,2 @@
+# sXHax
+Termux Teste Script
